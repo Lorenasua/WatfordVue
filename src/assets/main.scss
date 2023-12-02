@@ -1,0 +1,37 @@
+@import 'vendors/bootstrap';
+@import 'vendors/glide';
+// @import 'vendors/reset';
+
+// Partials
+@import 'partials/typography';
+@import 'partials/quote';
+@import 'partials/icon';
+
+// Layout
+@import 'layout/layout';
+// @import 'layout/fonts';
+
+// Components
+@import 'components/button/button';
+@import 'components/read-more';
+@import 'components/pagination';
+@import 'components/float-image';
+@import 'node_modules/cookieconsent/build/cookieconsent.min.css';
+@import 'components/wp-blocks';
+
+.dNoneSmallDevices {
+  display: none !important;
+  @include media-breakpoint-up(md) {
+    display: flex !important;
+  }
+}
+.dNoneBigDevices {
+  display: block !important;
+  @include media-breakpoint-up(md) {
+    display: none !important;
+  }
+}
+
+.modal-backdrop {
+  opacity: 0.3;
+}

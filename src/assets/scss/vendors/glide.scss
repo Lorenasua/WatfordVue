@@ -1,0 +1,39 @@
+// Required Core Stylesheet
+@import 'node_modules/@glidejs/glide/src/assets/sass/glide.core';
+// Optional Theme Stylesheet
+@import 'node_modules/@glidejs/glide/src/assets/sass/glide.theme';
+.glide {
+  $block: &;
+  &#{$block} {
+    position: relative;
+    opacity: 0;
+    //Hide the slider until it's initialized
+    visibility: hidden;
+    transition: visibility 0s linear 300ms, opacity 300ms;
+    &--init {
+      height: auto;
+      opacity: 1;
+      visibility: visible;
+      transition: visibility 0s linear 0s, opacity 300ms;
+    }
+  }
+
+  * {
+    user-select: text;
+  }
+
+  #{$block}__arrow {
+    display: none;
+    padding: 0;
+    border: unset;
+    box-shadow: none;
+    outline: 0;
+    opacity: 0.8;
+    &:hover {
+      opacity: 1;
+    }
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+  }
+}
